@@ -1,8 +1,8 @@
-#1行掲示板
+# 1行掲示板
 PHPとSQLを組み合わせた簡素な1行掲示板です
 各PHPファイルの変数username, passwordはマスクしてあります。
 
-# DB:keijiban
+# DB構造
 DB:keijibanには,bbsテーブル, userテーブルがあり
 bbsテーブルには,主キーであるidカラム, 文字列のspeaker, contentカラム,
 datetime型updated_atカラムがあります。
