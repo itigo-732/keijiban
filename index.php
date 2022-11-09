@@ -1,5 +1,3 @@
-<!-- 2022-06-21 作成-->
-
 <?php 
 ini_set("session.gc_maxlifetime", 1800);
 ini_set("settion.gc_probability", 1);
@@ -25,9 +23,9 @@ session_start();
 				exit;
 			}
 
-			$db = "mysql: host=localhost; dbname=webapp; charset=utf8mb4";
-			$username = "wpuser";
-			$password = "wppasswd";
+			$db = "mysql: host=localhost; dbname=keijiban; charset=utf8mb4";
+			$username = "****";
+			$password = "****";
 
 			$pdo = new PDO($db, $username, $password);
 
