@@ -18,9 +18,9 @@
                 exit;
             }
             if (isset($_POST["username"], $_POST["password"])) {
-                $db = "mysql: host=localhost; dbname=webapp; charset=utf8mb4";
-                $username = "wpuser";
-                $password = "wppasswd";
+                $db = "mysql: host=localhost; dbname=keijiban; charset=utf8mb4";
+                $username = "****";
+                $password = "****";
     
                 $pdo = new PDO($db, $username, $password);
 
@@ -30,15 +30,7 @@
 
                 $row = $stmt -> FETCH(PDO::FETCH_ASSOC);
                 if(isset($row["username"])){
-                    /*
-                    print_r($row);
-                    echo "<br>";
-                    print_r($_POST);
-                    echo "<br>"; 
-                    */
-                    //if($row["password"] == $_POST["password"]){
                     if (password_verify($_POST["password"], $row["password"])){
-                        //echo "ログイン可能";
                         session_regenerate_id(true);
                         $_SESSION["username"] = $_POST["username"];
                         $_SESSION["nickname"] = $row["nicname"];
