@@ -12,9 +12,9 @@
                 if ($_POST["password"] != $_POST["passwordConfirm"] ) {
                     echo "パスワードが一致しません";
                 }else {
-                    $db = "mysql: host=localhost; dbname=webapp; charset=utf8mb4";
-                    $username = "wpuser";
-                    $password = "wppasswd";
+                    $db = "mysql: host=localhost; dbname=keijiban; charset=utf8mb4";
+                    $username = "****";
+                    $password = "****";
         
                     $pdo = new PDO($db, $username, $password);
 
@@ -26,7 +26,7 @@
                         echo "そのユーザ名は使われています";
                     }else{
                         $pw = password_hash($_POST["password"], PASSWORD_DEFAULT);
-                        $stmt = $pdo -> prepare("Insert into users(username, password, nicname) Values (:username, :password, :nickname);");
+                        $stmt = $pdo -> prepare("Insert into users(username, password, nickname) Values (:username, :password, :nickname);");
                         $stmt -> bindValue(":username", $_POST["username"], PDO::PARAM_STR);
                         //$stmt -> bindValue(":password", $_POST["password"], PDO::PARAM_STR);
                         $stmt -> bindValue(":password", $pw, PDO::PARAM_STR);
